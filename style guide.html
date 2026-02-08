@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>JustOneMore - Brand Style Guide</title>
+    <style>
+/* Root-level CSS variables for theme colors and reuse.
+   Citation: https://www.w3schools.com/css/css3_variables.asp */
+:root {
+  --soft-void: #121212;
+  --signal-green: #2ecc71;
+  --loop-orchid: #9b59b6;
+  --liability-red: #e74c3c;
+  --anomaly-gold: #f1c40f;
+  --screen-white: #ecf0f1;
+  --muted-border: #bdc3c7;
+  --body-bg: #f7f8fb;
+  --text-main: #111;
+}
+
+/* Universal box-sizing reset to ensure predictable layout sizing.
+   Citation: https://www.w3schools.com/css/css_boxmodel.asp */
+* {
+  box-sizing: border-box;
+}
+
+/* Base document typography and spacing.
+   Citation: https://www.w3schools.com/css/css_font.asp */
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--text-main);
+  background: var(--body-bg);
+  line-height: 1.5;
+  padding: 24px;
+}
+
+/* Header block styling.
+   Citation: https://www.w3schools.com/css/css_padding.asp */
+header {
+  background: var(--soft-void);
+  color: var(--screen-white);
+  padding: 16px 20px;
+  border-radius: 10px;
+}
+
+/* Heading hierarchy styling.
+   Citation: https://www.w3schools.com/css/css_font.asp */
+h1, h2, h3, h4 {
+  font-family: 'Arial Black', Impact, sans-serif;
+  margin: 0 0 8px 0;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+/* Primary navigation layout using Flexbox.
+   Citation: https://www.w3schools.com/css/css3_flexbox.asp */
+nav {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+nav a {
+  color: var(--loop-orchid);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+/* Interactive link states.
+   Citation: https://www.w3schools.com/css/css_pseudo_classes.asp */
+nav a:hover,
+nav a:focus {
+  border-color: var(--signal-green);
+}
+
+/* Section spacing and content width control.
+   Citation: https://www.w3schools.com/css/css_margin.asp */
+section {
+  margin-top: 28px;
+  max-width: 1100px;
+}
+
+/* Card-style content containers.
+   Citation: https://www.w3schools.com/css/css_border.asp */
+.element,
+.wallet-section,
+.bet-card,
+.bet-slip,
+.brand-board {
+  border: 1px solid var(--muted-border);
+  border-radius: 10px;
+  background: #fff;
+  padding: 16px;
+  margin: 14px 0;
+}
+
+/* Preformatted code blocks.
+   Citation: https://www.w3schools.com/css/css_overflow.asp */
+pre {
+  background: #f0f2f6;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95em;
+}
+
+/* Button base styles with hover feedback.
+   Citation: https://www.w3schools.com/css/css3_buttons.asp */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Arial Black', Impact, sans-serif;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--loop-orchid), var(--signal-green));
+  color: #0b0b0b;
+  box-shadow: 0 8px 18px rgba(155, 89, 182, 0.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  box-shadow: 0 10px 22px rgba(46, 204, 113, 0.35);
+}
+
+.btn-reset {
+  background: transparent;
+  border: 1px solid var(--liability-red);
+  color: var(--liability-red);
+}
+
+.btn-reset:hover,
+.btn-reset:focus {
+  background: rgba(231, 76, 60, 0.1);
+}
+
+/* Form input styling and focus states.
+   Citation: https://www.w3schools.com/css/css_form.asp */
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid var(--muted-border);
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--loop-orchid);
+  border-color: var(--loop-orchid);
+}
+
+.form-group label {
+  font-weight: bold;
+  color: var(--soft-void);
+}
+
+.wallet-section .form-group label {
+  color: var(--screen-white);
+}
+
+/* Radio button grouping with Flexbox.
+   Citation: https://www.w3schools.com/css/css3_flexbox.asp */
+.radio-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.radio-group label {
+  color: var(--signal-green);
+}
+
+/* Grid-based layout for brand board component.
+   Citation: https://www.w3schools.com/css/css_grid.asp */
+.brand-board {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  background: radial-gradient(circle at 20% 20%, rgba(46, 204, 113, 0.08), rgba(155, 89, 182, 0.08)), #0f1114;
+  color: var(--screen-white);
+  max-width: 960px;
+  margin: 0 auto 24px auto;
+  border: 1px solid rgba(236, 240, 241, 0.18);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
+}
+
+.brand-board img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba(236, 240, 241, 0.28);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.board-hero {
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(30, 30, 30, 0.92));
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(155, 89, 182, 0.35);
+}
+
+.board-label {
+  font-family: 'Arial Black', Impact, sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  color: var(--loop-orchid);
+}
+
+.board-meta {
+  font-size: 0.95em;
+  color: var(--signal-green);
+  margin-bottom: 10px;
+}
+
+.board-cta button {
+  width: 100%;
+  background: linear-gradient(90deg, var(--loop-orchid), var(--signal-green));
+  color: #0b0b0b;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 14px;
+  font-family: 'Arial Black', Impact, sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(155, 89, 182, 0.4);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.board-cta button:hover,
+.board-cta button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(46, 204, 113, 0.45);
+}
+
+.sidebar {
+  background: #16181d;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid rgba(236, 240, 241, 0.16);
+}
+
+.sidebar h4 {
+  margin-top: 0;
+  color: var(--anomaly-gold);
+}
+
+.sidebar .swatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  vertical-align: middle;
+}
+
+.type-stack {
+  margin: 12px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(46, 204, 113, 0.12), rgba(155, 89, 182, 0.12));
+  border: 1px dashed rgba(236, 240, 241, 0.3);
+}
+
+.type-stack .loud {
+  font-family: 'Arial Black', Impact, sans-serif;
+  color: var(--screen-white);
+}
+
+.type-stack .data {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--signal-green);
+}
+
+.img-link img {
+  border: 2px solid var(--loop-orchid);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(155, 89, 182, 0.12);
+  color: var(--loop-orchid);
+  font-weight: bold;
+  margin-right: 6px;
+  text-decoration: none;
+  border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  border-color: var(--signal-green);
+  color: var(--signal-green);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f1114;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(236, 240, 241, 0.14);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.main-nav .logo {
+  color: var(--anomaly-gold);
+  font-family: 'Arial Black', Impact, sans-serif;
+}
+
+.bet-card {
+  background: #0f1114;
+  color: var(--screen-white);
+  border: 1px solid rgba(236, 240, 241, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.bet-card .bet-title {
+  font-family: 'Arial Black', Impact, sans-serif;
+  color: var(--loop-orchid);
+  margin: 10px 0 4px;
+}
+
+.bet-card .bet-odds {
+  color: var(--signal-green);
+  font-weight: bold;
+  margin: 6px 0 12px;
+}
+
+.bet-card img {
+  border-radius: 10px;
+  border: 1px solid rgba(46, 204, 113, 0.35);
+}
+
+.wallet-section {
+  background: #121212;
+  color: var(--screen-white);
+  border: 1px solid rgba(241, 196, 15, 0.3);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.wallet-section h3 {
+  color: var(--anomaly-gold);
+  margin-top: 0;
+}
+
+.bet-slip {
+  background: #16181d;
+  color: var(--screen-white);
+  border: 1px solid rgba(236, 240, 241, 0.14);
+}
+
+.bet-slip .slip-item span:last-child,
+.slip-total span:last-child {
+  color: var(--signal-green);
+}
+
+.slip-total {
+  border-top: 1px solid rgba(236, 240, 241, 0.2);
+  margin: 10px 0;
+  padding-top: 8px;
+}
+
+.sample-text-block {
+  background: linear-gradient(90deg, rgba(236, 240, 241, 0.6), rgba(155, 89, 182, 0.08));
+  border-left: 4px solid var(--loop-orchid);
+}
+
+.sample-text-block h1 {
+  color: var(--loop-orchid);
+}
+
+.sample-text-block h2 {
+  color: var(--signal-green);
+}
+
+.sample-text-block h3 {
+  color: var(--liability-red);
+}
+
+.sample-text-block h4 {
+  color: var(--anomaly-gold);
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.template-card {
+  background: #0f1114;
+  color: var(--screen-white);
+  border: 1px solid rgba(236, 240, 241, 0.14);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.template-card h4 {
+  margin: 0 0 6px;
+  color: var(--loop-orchid);
+}
+
+.template-card p {
+  margin-bottom: 10px;
+}
+
+.template-meta {
+  font-size: 0.9em;
+  color: var(--anomaly-gold);
+  margin-bottom: 10px;
+}
+
+.template-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Responsive layout adjustments for smaller screens.
+   Citation: https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+@media (max-width: 760px) {
+  body {
+    padding: 16px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .brand-board {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Section: Page header + primary navigation structure. Citation: https://www.w3schools.com/html/html_layout.asp -->
+    <header>
+      <h1>JustOneMore // Style Guide</h1>
+      <p><strong>Visual Identity:</strong> Minimal, Loop-based, Satirical, XR-Native.</p>
+      
+      <nav>   
+        <a href="#brand_identity">Identity & Strategy</a>     
+        <a href="#interactive_elements">Interactive</a>
+        <a href="#text_elements">Typography</a>
+        <a href="#combined_elements">Components</a>
+        <a href="#page_templates">Templates</a>
+        <a href="products.html">Product Page</a>
+        <a href="checkout.html">Checkout Page</a>
+      </nav>
+    </header>
+
+    <hr>
+
+    <!-- Section: Brand identity content grouped with semantic sections. Citation: https://www.w3schools.com/html/html5_semantic_elements.asp -->
+    <section id="brand_identity">
+      <h2>1. Brand Identity & Strategy</h2>
+
+      <section>
+        <h3>Branding Ideas</h3>
+        
+        <h4>What does the company do, or offer?</h4>
+        <p>JustOneMore is a satirical and hyper-aware sports betting / gambling platform that uses AR/VR to collapse the boundary between watching and wagering. It offers AR overlays that surface live odds directly onto a user's field of view—hovering over players or referees in real-time—and VR watch modes that replicate courtside presence. The platform turns ordinary, split-second gestures into rapid-fire micro-betting opportunities.</p>
+
+        <h4>Who is the company to potential customers? (The Persona)</h4>
+        <p>The brand persona is the "Enabling Best Friend." It is darkly humorous, observant, and hyper-aware of the absurdity of gambling. It doesn't act like a shiny, corporate casino; instead, it whispers, "Why not?" It uses humor to mask risk, acting as a playful accomplice that validates impulsive behavior with a wink.</p>
+        
+        <h4>Who are the customers? (Target Personas)</h4>
+        <ul>
+            <li>
+                <strong>The Dopamine Chaser (Primary):</strong> Age 21-29. Lives on Twitch and TikTok. Values speed over strategy. They don't want to wait 90 minutes for a match result; they want to bet on whether the goalie blinks in the next 10 seconds.
+            </li>
+            <li>
+                <strong>The Irony Punter (Secondary):</strong> Age 25-35. Tech-savvy and cynical. They know the "house always wins" but plays anyway for the "content" and the absurdity of the AR features. They appreciate the satirical tone because it doesn't insult their intelligence.
+            </li>
+        </ul>
+
+        <h4>Why might this company entice someone to purchase?</h4>
+        <p>
+          <strong>Immersion & Low Friction:</strong> By embedding betting directly into the visual reality of the game (AR/VR), the friction of picking up a phone or opening an app is removed.
+          <br>
+          <strong>Humor as Comfort:</strong> The satirical tone (buttons labeled "That one doesn't count") removes the shame of losing, keeping the user engaged through entertainment rather than just financial incentive.
+          <br>
+          <strong>Novelty:</strong> The "spatial interface" and gaze-based betting offer a futuristic, gamified experience that feels distinct from traditional sportsbooks.
+        </p>
+      </section>
+
+      <hr>
+
+      <section>
+        <h3>Brand Components</h3>
+
+        <h4>Fonts</h4>
+        <ul>
+          <li>
+            <strong>Primary Typeface:</strong> 
+            <span style="font-family: 'Arial Black', Impact, sans-serif; font-size: 1.2em;">THE NEXT PITCH (Arial Black)</span>
+            <br>Used for "shouting" odds and satirical messaging.
+          </li>
+          <li>
+            <strong>Secondary Typeface:</strong> 
+            <span style="font-family: 'Courier New', Courier, monospace;">System_Log: User_Bet_Confirmed (Courier New)</span>
+            <br>Used to mimic code, data streams, and raw information.
+          </li>
+        </ul>
+
+        <h4>Colour Palette</h4>
+        <p><em>(Inline styles used to render swatches)</em></p>
+        
+        <div style="background-color: #121212; color: #FFFFFF; padding: 20px; margin-bottom: 10px; width: 300px; border: 1px solid #333;">
+          <strong>#121212 (Soft Void)</strong><br>
+          Primary background. Less harsh than pure black to reduce eye strain in VR.
+        </div>
+
+        <div style="background-color: #2ecc71; color: #000000; padding: 20px; margin-bottom: 10px; width: 300px;">
+          <strong>#2ECC71 (Signal Green)</strong><br>
+          Wins, "Yes", "Go". A readable, flat emerald green.
+        </div>
+
+        <div style="background-color: #9b59b6; color: #FFFFFF; padding: 20px; margin-bottom: 10px; width: 300px;">
+          <strong>#9B59B6 (Loop Orchid)</strong><br>
+          "Just One More", Upsells. A psychological trigger color, but softer than neon magenta.
+        </div>
+
+        <div style="background-color: #e74c3c; color: #FFFFFF; padding: 20px; margin-bottom: 10px; width: 300px;">
+          <strong>#E74C3C (Liability Red)</strong><br>
+          Losses, Cancellations, "That one doesn't count".
+        </div>
+
+        <div style="background-color: #f1c40f; color: #000000; padding: 20px; margin-bottom: 10px; width: 300px;">
+          <strong>#F1C40F (Anomaly Gold)</strong><br>
+          Rare outcomes, Jackpots, &lt; 1% probabilities.
+        </div>
+
+        <div style="background-color: #ecf0f1; color: #000000; padding: 20px; margin-bottom: 10px; width: 300px; border: 1px solid #bdc3c7;">
+          <strong>#ECF0F1 (Screen White)</strong><br>
+          Primary text. Slightly off-white to reduce glare.
+        </div>
+
+        <h4>Visual Usage Rules</h4>
+        <ul>
+            <li><strong>The Anxiety Loop:</strong> Always pair "Loop Orchid" buttons with "Arial Black" text to trigger urgency.</li>
+            <li><strong>Data Density:</strong> Use "Soft Void" backgrounds with "Courier New" text for betting histories or legal disclaimers to mimic a terminal window.</li>
+            <li><strong>AR Contrast:</strong> All floating AR elements must have a 2px border of "Screen White" to ensure visibility against live sports video feeds.</li>
+        </ul>
+
+        <h4>Imagery & Art Direction</h4>
+        <ul>
+          <li><strong>Looping Icons:</strong> Use of circular arrows, loading spinners, and infinite loops to visually reinforce the concept of repetition.</li>
+          <li><strong>AR Visuals:</strong> Imagery should always look like it is "floating" or overlaid on reality (e.g., wireframes over a baseball field).</li>
+          <li><strong>Minimalism:</strong> Avoid skeuomorphic poker chips or green felt. The aesthetic is "The Matrix meets a Sports Bar."</li>
+        </ul>
+
+        <h4>Brand Components Assembled</h4>
+        <p>This layout shows fonts, color palette, buttons, and imagery living together on a single card so markers can see the combined look and feel.</p>
+
+        <div class="brand-board">
+          <div class="board-hero">
+            <div class="board-label">JustOneMore // XR Micro-Bet</div>
+            <div class="board-meta">Live AR Feed · Signal Green odds overlay · Loop Orchid CTA</div>
+            <img src="img1.png" alt="AR overlay showing referee's foot for micro-bet">
+            <div class="board-cta">
+              <button type="button">Place Quick Bet</button>
+            </div>
+          </div>
+          <div class="sidebar">
+            <h4>Palette In Use</h4>
+            <div><span class="swatch" style="background:#121212;"></span>Soft Void (background)</div>
+            <div><span class="swatch" style="background:#ECF0F1;"></span>Screen White (borders & text)</div>
+            <div><span class="swatch" style="background:#2ECC71;"></span>Signal Green (odds highlight)</div>
+            <div><span class="swatch" style="background:#9B59B6;"></span>Loop Orchid (CTA)</div>
+            <div><span class="swatch" style="background:#E74C3C;"></span>Liability Red (alerts)</div>
+
+            <div class="type-stack">
+              <div class="loud">THE NEXT PITCH — Heading</div>
+              <div class="data">System_Log: User_Bet_Confirmed — Data line</div>
+            </div>
+
+            <p style="margin:0;">Image: Live AR overlay anchors the product story in context.</p>
+          </div>
+        </div>
+
+        <h4 class="code-label">Code (assembled layout):</h4>
+        <pre><code>&lt;div class="brand-board"&gt;
+  &lt;div class="board-hero"&gt;
+    &lt;div class="board-label"&gt;JustOneMore // XR Micro-Bet&lt;/div&gt;
+    &lt;div class="board-meta"&gt;Live AR Feed · Signal Green odds overlay · Loop Orchid CTA&lt;/div&gt;
+    &lt;img src="img1.png" alt="AR overlay showing referee's foot for micro-bet"&gt;
+    &lt;div class="board-cta"&gt;
+      &lt;button type="button"&gt;Place Quick Bet&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="sidebar"&gt;
+    &lt;h4&gt;Palette In Use&lt;/h4&gt;
+    &lt;div&gt;&lt;span class="swatch" style="background:#121212;"&gt;&lt;/span&gt;Soft Void (background)&lt;/div&gt;
+    &lt;div&gt;&lt;span class="swatch" style="background:#ECF0F1;"&gt;&lt;/span&gt;Screen White (borders &amp; text)&lt;/div&gt;
+    &lt;div&gt;&lt;span class="swatch" style="background:#2ECC71;"&gt;&lt;/span&gt;Signal Green (odds highlight)&lt;/div&gt;
+    &lt;div&gt;&lt;span class="swatch" style="background:#9B59B6;"&gt;&lt;/span&gt;Loop Orchid (CTA)&lt;/div&gt;
+    &lt;div&gt;&lt;span class="swatch" style="background:#E74C3C;"&gt;&lt;/span&gt;Liability Red (alerts)&lt;/div&gt;
+    &lt;div class="type-stack"&gt;
+      &lt;div class="loud"&gt;THE NEXT PITCH — Heading&lt;/div&gt;
+      &lt;div class="data"&gt;System_Log: User_Bet_Confirmed — Data line&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Image: Live AR overlay anchors the product story in context.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+    </section>
+
+    <hr>
+
+    <!-- Section: Interactive elements (links, buttons, inputs). Citation: https://www.w3schools.com/html/html_links.asp -->
+    <section id="interactive_elements">
+      <h2>a. Interactive Elements</h2>
+
+      <section class="element">
+        <h3 class="section-label">In-text link</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <p>AR overlays surface <a href="#">live odds</a> directly onto the field of view—tap the <span style="color:#2ECC71;">Signal Green</span> tags to open a micro-bet, purple means <span style="color:#9B59B6;">upsell</span>.</p>
+        
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;p&gt;AR overlays surface &lt;a href="#"&gt;live odds&lt;/a&gt; directly onto the field of view—tap the &lt;span style="color:#2ECC71;"&gt;Signal Green&lt;/span&gt; tags to open a micro-bet, purple means &lt;span style="color:#9B59B6;"&gt;upsell&lt;/span&gt;.&lt;/p&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <h3 class="section-label">Navigation Link</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <nav style="background:#121212; padding:8px 10px; border-radius:10px; display:flex; gap:8px;">
+          <a class="nav-link" href="#">Live AR Feed</a>
+          <a class="nav-link" href="#">Micro-bets</a>
+          <a class="nav-link" href="#">History</a>
+        </nav>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;nav style="background:#121212; padding:8px 10px; border-radius:10px; display:flex; gap:8px;"&gt;
+  &lt;a class="nav-link" href="#"&gt;Live AR Feed&lt;/a&gt;
+  &lt;a class="nav-link" href="#"&gt;Micro-bets&lt;/a&gt;
+  &lt;a class="nav-link" href="#"&gt;History&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <h3 class="section-label">Submit / Reset Buttons</h3>
+        <p>Used for confirming micro-bets or clearing the interface.</p>
+        <h4 class="code-label">Rendered Example:</h4>
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <button class="btn btn-primary" type="submit">Just One More</button>
+          <button class="btn btn-reset" type="reset">That one doesn't count</button>
+          <span style="color:#2ECC71; font-size:0.9em;">Primary uses Loop Orchid → Signal Green gradient</span>
+        </div>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;"&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Just One More&lt;/button&gt;
+  &lt;button class="btn btn-reset" type="reset"&gt;That one doesn't count&lt;/button&gt;
+  &lt;span style="color:#2ECC71; font-size:0.9em;"&gt;Primary uses Loop Orchid → Signal Green gradient&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <!-- Form control: <label> + <input> pairing for accessibility and clarity. Citation: https://www.w3schools.com/html/html_form_elements.asp -->
+        <h3 class="section-label">Text Input Field with Label</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <div class="form-group">
+          <label for="wager-amount">Wager Amount ($)</label>
+          <input type="text" id="wager-amount" placeholder="0.00">
+          <small style="color:#2ECC71;">Tip: minimum $1, auto-fills with last stake.</small>
+        </div>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;div class="form-group"&gt;
+  &lt;label for="wager-amount"&gt;Wager Amount ($)&lt;/label&gt;
+  &lt;input type="text" id="wager-amount" placeholder="0.00"&gt;
+  &lt;small style="color:#2ECC71;"&gt;Tip: minimum $1, auto-fills with last stake.&lt;/small&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <!-- Form control: radio inputs share the same name to behave as a group. Citation: https://www.w3schools.com/html/html_forms.asp -->
+        <h3 class="section-label">Radio Button with Label</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <form>
+            <label>Confirm Micro-bet?</label>
+            <div class="radio-group">
+              <div>
+                <input type="radio" id="yes" name="confirm" checked>
+                <label for="yes">Yes</label>
+              </div>
+              <div>
+                <input type="radio" id="more" name="confirm">
+                <label for="more">Just One More</label>
+              </div>
+            </div>
+            <p style="color:#9B59B6; margin:8px 0 0;">Purple = playful nudge, green = confirm.</p>
+        </form>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;form&gt;
+  &lt;label&gt;Confirm Micro-bet?&lt;/label&gt;
+  &lt;div class="radio-group"&gt;
+    &lt;div&gt;
+      &lt;input type="radio" id="yes" name="confirm" checked&gt;
+      &lt;label for="yes"&gt;Yes&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type="radio" id="more" name="confirm"&gt;
+      &lt;label for="more"&gt;Just One More&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p style="color:#9B59B6; margin:8px 0 0;"&gt;Purple = playful nudge, green = confirm.&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <h3 class="section-label">Image as a Link</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <a href="#" class="img-link">
+          <img src="img2.png" alt="Enter VR Mode">
+        </a>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;a href="#" class="img-link"&gt;
+  &lt;img src="img2.png" alt="Enter VR Mode"&gt;
+&lt;/a&gt;</code></pre>
+      </section>
+
+    </section>
+
+    <!-- Section: Text hierarchy (headings, paragraphs, lists). Citation: https://www.w3schools.com/html/html_headings.asp -->
+    <section id="text_elements">
+      <h2>b. Text Styling</h2>
+
+      <section class="element sample-text-block">
+        <h3 class="section-label">Headings (Levels 1-4)</h3>
+        
+        <h4 class="code-label">Rendered Example:</h4>
+        <h1>Heading Level 1: The Next Pitch</h1>
+        <h2>Heading Level 2: Micro-betting Rules</h2>
+        <h3>Heading Level 3: AR Overlay Settings</h3>
+        <h4>Heading Level 4: Liability Disclaimer</h4>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;h1&gt;Heading Level 1: The Next Pitch&lt;/h1&gt;
+&lt;h2&gt;Heading Level 2: Micro-betting Rules&lt;/h2&gt;
+&lt;h3&gt;Heading Level 3: AR Overlay Settings&lt;/h3&gt;
+&lt;h4&gt;Heading Level 4: Liability Disclaimer&lt;/h4&gt;</code></pre>
+      </section>
+
+      <section class="element sample-text-block">
+        <h3 class="section-label">Paragraph</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <p>JustOneMore collapses the boundary between watching and wagering. When users are physically present at a game, bar, or watch party, AR overlays surface live odds directly onto their field of view—hovering over players, referees, or the scoreboard—turning ordinary gestures and split-second moments into bettable prompts.</p>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;p&gt;JustOneMore collapses the boundary between watching and wagering. When users are physically present at a game, bar, or watch party, AR overlays surface live odds directly onto their field of view—hovering over players, referees, or the scoreboard—turning ordinary gestures and split-second moments into bettable prompts.&lt;/p&gt;</code></pre>
+      </section>
+
+      <section class="element sample-text-block">
+        <h3 class="section-label">Numbered List</h3>
+        <h4 class="code-label">Rendered Example:</h4>
+        <label>How to enable Spatial Betting:</label>
+        <ol>
+          <li>Put on your compatible XR headset.</li>
+          <li>Calibrate your gaze tracking by looking at the "Just One More" logo.</li>
+          <li>Nod once to confirm a wager.</li>
+          <li>Shake head to cancel (note: cancellation fees apply).</li>
+        </ol>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;label&gt;How to enable Spatial Betting:&lt;/label&gt;
+&lt;ol&gt;
+  &lt;li&gt;Put on your compatible XR headset.&lt;/li&gt;
+  &lt;li&gt;Calibrate your gaze tracking by looking at the "Just One More" logo.&lt;/li&gt;
+  &lt;li&gt;Nod once to confirm a wager.&lt;/li&gt;
+  &lt;li&gt;Shake head to cancel (note: cancellation fees apply).&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </section>
+
+    </section>
+
+    <!-- Section: Combined semantic components like <nav>, <article>, <aside>. Citation: https://www.w3schools.com/html/html5_semantic_elements.asp -->
+    <section id="combined_elements">
+      <h2>c. Combined Elements</h2>
+
+      <section class="element">
+        <h3 class="section-label">Main Navigation</h3>
+        <p><em>Semantic Upgrade: Uses the &lt;nav&gt; element for better structure.</em></p>
+        <h4 class="code-label">Rendered Example:</h4>
+        <nav class="main-nav">
+          <div class="logo">JustOneMore ↺</div>
+          <div>
+            <a href="#" class="nav-link">Live Odds</a>
+            <a href="#" class="nav-link">VR Watch</a>
+            <a href="#" class="nav-link">History</a>
+            <a href="#" class="nav-link">Account</a>
+          </div>
+        </nav>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;nav class="main-nav"&gt;
+  &lt;div class="logo"&gt;JustOneMore ↺&lt;/div&gt;
+  &lt;div&gt;
+    &lt;a href="#" class="nav-link"&gt;Live Odds&lt;/a&gt;
+    &lt;a href="#" class="nav-link"&gt;VR Watch&lt;/a&gt;
+    &lt;a href="#" class="nav-link"&gt;History&lt;/a&gt;
+    &lt;a href="#" class="nav-link"&gt;Account&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <h3 class="section-label">Product / Service Listing</h3>
+        <p><em>Semantic Upgrade: Uses the &lt;article&gt; element to denote independent content.</em></p>
+        
+        <h4 class="code-label">Rendered Example:</h4>
+        <article class="bet-card">
+          <div class="bet-image">
+            <img src="img1.png" alt="AR overlay showing referee's foot for micro-bet" style="width: 100%; max-width: 320px; display: block;">
+          </div>
+          <div class="bet-title">Next Step: Left or Right?</div>
+          <p>Micro-bet on the referee's immediate next movement.</p>
+          <div class="bet-odds">2.5x Multiplier</div>
+          <a href="#" class="btn btn-primary">Quick Bet</a>
+          <div>
+              <a href="#">View Detailed Analytics</a>
+          </div>
+        </article>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;article class="bet-card"&gt;
+  &lt;div class="bet-image"&gt;
+    &lt;img src="img1.png" alt="AR overlay showing referee's foot for micro-bet" style="width: 100%; max-width: 320px; display: block;"&gt;
+  &lt;/div&gt;
+  &lt;div class="bet-title"&gt;Next Step: Left or Right?&lt;/div&gt;
+  &lt;p&gt;Micro-bet on the referee's immediate next movement.&lt;/p&gt;
+  &lt;div class="bet-odds"&gt;2.5x Multiplier&lt;/div&gt;
+  &lt;a href="#" class="btn btn-primary"&gt;Quick Bet&lt;/a&gt;
+  &lt;div&gt;
+      &lt;a href="#"&gt;View Detailed Analytics&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <h3 class="section-label">Payment Form</h3>
+        
+        <h4 class="code-label">Rendered Example:</h4>
+        <div class="wallet-section">
+          <h3>Add Funds to Wallet</h3>
+          
+          <div class="form-group">
+            <label>Select Amount</label>
+            <div class="radio-group">
+                <label><input type="radio" name="amt" value="5"> $5</label>
+                <label><input type="radio" name="amt" value="10"> $10</label>
+                <label><input type="radio" name="amt" value="20" checked> $20</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Custom Amount</label>
+            <input type="number" placeholder="$0.00">
+          </div>
+
+          <div class="form-group">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" placeholder="JANE Q USER">
+          </div>
+
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" inputmode="numeric" pattern="[0-9]{16}" placeholder="4242 4242 4242 4242">
+          </div>
+
+          <div class="form-group">
+            <label>Expiry / CVV</label>
+            <div style="display:flex; gap:10px;">
+              <input type="text" inputmode="numeric" pattern="[0-9]{2}/[0-9]{2}" placeholder="MM/YY" aria-label="Expiry MM/YY">
+              <input type="text" inputmode="numeric" pattern="[0-9]{3,4}" placeholder="CVV" aria-label="CVV">
+            </div>
+          </div>
+          
+          <button class="btn btn-primary">Load Wallet</button>
+        </div>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;div class="wallet-section"&gt;
+  &lt;h3&gt;Add Funds to Wallet&lt;/h3&gt;
+  
+  &lt;div class="form-group"&gt;
+    &lt;label&gt;Select Amount&lt;/label&gt;
+    &lt;div class="radio-group"&gt;
+        &lt;label&gt;&lt;input type="radio" name="amt" value="5"&gt; $5&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="amt" value="10"&gt; $10&lt;/label&gt;
+        &lt;label&gt;&lt;input type="radio" name="amt" value="20" checked&gt; $20&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-group"&gt;
+    &lt;label&gt;Custom Amount&lt;/label&gt;
+    &lt;input type="number" placeholder="$0.00"&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form-group"&gt;
+    &lt;label for="card-name"&gt;Name on Card&lt;/label&gt;
+    &lt;input type="text" id="card-name" placeholder="JANE Q USER"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-group"&gt;
+    &lt;label for="card-number"&gt;Card Number&lt;/label&gt;
+    &lt;input type="text" id="card-number" inputmode="numeric" pattern="[0-9]{16}" placeholder="4242 4242 4242 4242"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-group"&gt;
+    &lt;label&gt;Expiry / CVV&lt;/label&gt;
+    &lt;div style="display:flex; gap:10px;"&gt;
+      &lt;input type="text" inputmode="numeric" pattern="[0-9]{2}/[0-9]{2}" placeholder="MM/YY" aria-label="Expiry MM/YY"&gt;
+      &lt;input type="text" inputmode="numeric" pattern="[0-9]{3,4}" placeholder="CVV" aria-label="CVV"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;button class="btn btn-primary"&gt;Load Wallet&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <h3 class="section-label">Checkout / Bet Slip</h3>
+        <p><em>Semantic Upgrade: Uses the &lt;aside&gt; element as this is typically a sidebar component.</em></p>
+        
+        <h4 class="code-label">Rendered Example:</h4>
+        <aside class="bet-slip">
+          <div>ACTIVE SLIP</div>
+          
+          <div class="slip-item">
+            <span>Ref blinks twice</span>
+            <span>$5.00</span>
+          </div>
+          
+          <div class="slip-item">
+            <span>Pitch speed > 95mph</span>
+            <span>$2.00</span>
+          </div>
+
+          <div class="slip-total">
+            <span>TOTAL RISK</span>
+            <span>$7.00</span>
+          </div>
+
+          <div>
+            <button class="btn btn-primary">Confirm All</button>
+            <button class="btn btn-reset">Clear Slip</button>
+          </div>
+        </aside>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;aside class="bet-slip"&gt;
+  &lt;div&gt;ACTIVE SLIP&lt;/div&gt;
+  
+  &lt;div class="slip-item"&gt;
+    &lt;span&gt;Ref blinks twice&lt;/span&gt;
+    &lt;span&gt;$5.00&lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="slip-item"&gt;
+    &lt;span&gt;Pitch speed &gt; 95mph&lt;/span&gt;
+    &lt;span&gt;$2.00&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class="slip-total"&gt;
+    &lt;span&gt;TOTAL RISK&lt;/span&gt;
+    &lt;span&gt;$7.00&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;button class="btn btn-primary"&gt;Confirm All&lt;/button&gt;
+    &lt;button class="btn btn-reset"&gt;Clear Slip&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/aside&gt;</code></pre>
+      </section>
+
+      <section class="element">
+        <!-- Form: uses <select> and <textarea> for structured + freeform feedback. Citation: https://www.w3schools.com/tags/tag_textarea.asp -->
+        <h3 class="section-label">Feedback / Support Form</h3>
+        <p><em>Requirement for P02: Mechanism for user feedback.</em></p>
+        <h4 class="code-label">Rendered Example:</h4>
+        <form>
+            <h4>Report a Glitch or Dispute Odds</h4>
+            <div class="form-group">
+                <label for="issue-type">Issue Type:</label>
+                <select id="issue-type" name="issue">
+                    <option value="glitch">AR Glitch</option>
+                    <option value="dispute">I definitely won that</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="feedback-details">Details:</label>
+                <br>
+                <textarea id="feedback-details" name="details" rows="4" cols="40" placeholder="Describe what happened..."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Report</button>
+        </form>
+
+        <h4 class="code-label">Code:</h4>
+        <pre><code>&lt;form&gt;
+    &lt;h4&gt;Report a Glitch or Dispute Odds&lt;/h4&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="issue-type"&gt;Issue Type:&lt;/label&gt;
+        &lt;select id="issue-type" name="issue"&gt;
+            &lt;option value="glitch"&gt;AR Glitch&lt;/option&gt;
+            &lt;option value="dispute"&gt;I definitely won that&lt;/option&gt;
+            &lt;option value="other"&gt;Other&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="feedback-details"&gt;Details:&lt;/label&gt;
+        &lt;br&gt;
+        &lt;textarea id="feedback-details" name="details" rows="4" cols="40" placeholder="Describe what happened..."&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;button class="btn btn-primary" type="submit"&gt;Send Report&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </section>
+
+    </section>
+
+    <!-- Section: Responsive page templates linking to future pages. -->
+    <section id="page_templates">
+      <h2>d. Responsive Page Templates</h2>
+      <p>Reference layouts for upcoming product surfaces. Each card links to the future page so navigation flows stay consistent while templates are built.</p>
+      
+      <div class="template-grid">
+        <article class="template-card">
+          <div class="template-meta">Breakpoint tested: 360px–1280px</div>
+          <h4>Products / Catalog</h4>
+          <p>Grid-first layout showcasing live odds cards, filters, and AR preview slots.</p>
+          <div class="template-actions">
+            <a class="btn btn-primary" href="products.html">Open products.html</a>
+            <a class="nav-link" href="products.html">Text link</a>
+          </div>
+        </article>
+        
+        <article class="template-card">
+          <div class="template-meta">Breakpoint tested: 360px–1280px</div>
+          <h4>Checkout / Bet Slip</h4>
+          <p>Two-column on desktop, stacked on mobile; includes wallet summary and confirmation CTA.</p>
+          <div class="template-actions">
+            <a class="btn btn-primary" href="checkout.html">Open checkout.html</a>
+            <a class="nav-link" href="checkout.html">Text link</a>
+          </div>
+        </article>
+      </div>
+      
+      <h4 class="code-label">Code Snippet:</h4>
+      <pre><code>&lt;section id="page_templates"&gt;
+  &lt;h2&gt;d. Responsive Page Templates&lt;/h2&gt;
+  &lt;p&gt;Reference layouts for upcoming product surfaces.&lt;/p&gt;
+  &lt;div class="template-grid"&gt;
+    &lt;article class="template-card"&gt;
+      &lt;div class="template-meta"&gt;Breakpoint tested: 360px–1280px&lt;/div&gt;
+      &lt;h4&gt;Products / Catalog&lt;/h4&gt;
+      &lt;p&gt;Grid-first layout showcasing live odds cards.&lt;/p&gt;
+      &lt;div class="template-actions"&gt;
+        &lt;a class="btn btn-primary" href="products.html"&gt;Open products.html&lt;/a&gt;
+        &lt;a class="nav-link" href="products.html"&gt;Text link&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="template-card"&gt;
+      &lt;div class="template-meta"&gt;Breakpoint tested: 360px–1280px&lt;/div&gt;
+      &lt;h4&gt;Checkout / Bet Slip&lt;/h4&gt;
+      &lt;p&gt;Two-column on desktop, stacked on mobile.&lt;/p&gt;
+      &lt;div class="template-actions"&gt;
+        &lt;a class="btn btn-primary" href="checkout.html"&gt;Open checkout.html&lt;/a&gt;
+        &lt;a class="nav-link" href="checkout.html"&gt;Text link&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </section>
+
+    <!-- Section: External attribution list. Citation: https://www.w3schools.com/html/html_links.asp -->
+    <section id="citations">
+      <h2>Citations</h2>
+      <ul>
+         <li>Placeholder Image Service. (2025). <strong>Via.placeholder.com</strong>. Retrieved from <a href="https://via.placeholder.com">https://via.placeholder.com</a></li>
+      </ul>
+    </section>
+
+  </body>
+</html>
