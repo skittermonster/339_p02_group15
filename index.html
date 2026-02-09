@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<!-- P01: Process - Style Guide -->
+<!-- Nathan Dy 301336835 -->
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>P01 - Style Guide Template</title>
+
+  <link href="css/main.css" rel="stylesheet">
+  <!-- To use google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+
+  <!-- To use Google Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+</head>
+
+<body>
+
+  <header>
+    <h1>P01 - Style Guide Template</h1>
+
+    <p>A template you can use to start building out your own style guides with.</p>
+
+
+    <nav>
+      <a href="#interactive_elements">Interactive Elements</a>
+      <a href="#text_elements">Text Elements</a>
+      <a href="#combined_elements">Combined Elements</a>
+      <a href="product_listing.html">Product Listing Template</a>
+      <a href="checkout.html">Checkout Template</a>
+      <a href="#citations">Citations</a>
+    </nav>
+
+
+
+    <!-- INTERACTIVE ELEMENTS SECTION // -->
+    <section id="interactive_elements">
+      <h2>Interactive Elements</h2>
+
+
+      <section class="element">
+        <h3>In-text link</h3>
+
+        <h4>Sample code:</h4>
+
+        <h4> Rendered element:</h4>
+
+      </section>
+
+
+      <!-- Default Button styling section -->
+      <section class="element">
+
+        <h3>Navigation Link: Products Link</h3>
+
+        <h4>CSS selector:</h4>
+        <p>.desktop-nav-item</p>
+
+        <h4>Sample code:</h4>
+        <code>&lt;a href="#" class="desktop-nav-item" id="products-link-example"&gt;Products&lt;/a&gt;</code>
+
+        <h4>Rendered element:</h4>
+        <a class="desktop-nav-item" id="products-link-example" href="#">Products</a>
+
+      </section>
+
+
+      <section class="element">
+        <h3>Submit/Reset Buttons: Add to Cart Button</h3>
+
+        <h4>Sample code:</h4>
+        <code>
+          &lt;button type="submit" class="add-to-cart-button"&gt;Add to Cart&lt;/button&gt;
+        </code>
+
+        <h4>Rendered element:</h4>
+        <a href="#"><button type="submit" id="add-to-cart-button">Add to Cart</button> </a>
+      </section>
+
+
+      <section class="element">
+        <h3>Text Input Field with Label: Email Text Field for Contact Submission</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;label for="email"&gt; Email &lt;/label&gt;
+          <br>
+          &lt;input type="text" id="email" placeholder="name@domain.com"&gt;
+        </code>
+
+        <h4> Rendered element: </h4>
+        <label for="email"> Email </label>
+        <input type="text" id="email" placeholder="name@domain.com">
+
+      </section>
+
+
+      <section class="element">
+        <h3>Radio Button with Label: Payment Method</h3>
+
+        <h4>Sample code:</h4>
+        <code>
+          &lt;input type="radio" name="payment-method" value="credit-card"&gt; Credit Card
+          <br>
+          &lt;input type="radio" name="payment-method" value="debit-card"&gt; Debit Card
+        </code>
+
+        <h4> Rendered element: </h4>
+        <input type="radio" name="payment-method" value="credit-card" checked> Credit Card
+        <input type="radio" name="payment-method" value="debit-card"> Debit Card
+
+      </section>
+
+
+      <section class="element">
+        <h3>Image as a Link: Shop for RAM on Homepage</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;a href="#" id="shop-ram-link"&gt;&lt;img src="img\shop ram stock gemini.png" alt="Stock Image of RAM with text stating 'Shop RAM"&gt;&lt;/a&gt;
+        </code>
+
+        <h4> Rendered element: </h4>
+        <a href="#" id="shop-ram-link"><img src="img\shop ram stock gemini.png"
+            alt="Stock Image of RAM with text stating 'Shop RAM"></a>
+
+        <!-- AI generated image used, will be replaced with an edited real image for final submission -->
+      </section>
+
+
+    </section>
+    <!-- // INTERACTIVE ELEMENTS SECTION -->
+
+
+    <!-- TEXT ELEMENTS SECTION // -->
+    <section id="text_elements">
+      <h2>Text Elements</h2>
+
+      <section class="element">
+        <h3>Headings</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;h1 id="h1-heading-element"&gt; Brand Name &lt;/h1&gt; <br>
+          &lt;h2 id="h2-heading-element"&gt; Brand Slogan/Section Heading&lt;/h2&gt; <br>
+          &lt;h3 id="h3-heading-element"&gt; Section Heading/Product Name (i.e. 'Products' Page)&lt;/h3&gt; <br>
+          &lt;h4 id="h4-heading-element"&gt; Subsection Heading (i.e. 'Product Details')&lt;/h4&gt; <br>
+        </code>
+
+        <h4> Rendered element: </h4>
+        <h1 id="h1-heading-element"> h1: Brand Name </h1>
+        <h2 id="h2-heading-element"> h2: Brand Slogan/Section Heading</h2>
+        <h3 id="h3-heading-element"> h3: Section Heading/Product Name (i.e. 'Products' Page)</h3>
+        <h4 id="h4-heading-element"> h4: Subsection Heading (i.e. 'Product Details')</h4>
+      </section>
+
+      <section class="element">
+        <h3>Paragraphs: Product Description</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;p id="paragraph-text-element"&gt; <br>
+          Unlock unparalleled performance with the Corsair Vengeance 32GB desktop memory. With a 6,400MHz speed and 288-pin configuration, <br>
+          it delivers enhanced memory bandwidth, while the solid aluminum heatspreader efficiently dissipates heat for consistent performance. <br>
+          The powerful CORSAIR iCUE software provides convenient control over the memory. <br>
+        &lt;/p&gt; <br>
+        </code>
+
+        <h4> Rendered element: </h4>
+        <p id="paragraph-text-element">
+          Unlock unparalleled performance with the Corsair Vengeance 32GB desktop memory. With a 6,400MHz speed and
+          288-pin configuration,
+          it delivers enhanced memory bandwidth, while the solid aluminum heatspreader efficiently dissipates heat for
+          consistent performance.
+          The powerful CORSAIR iCUE software provides convenient control over the memory.
+        </p>
+      </section>
+
+      <section class="element">
+        <h3>Numbered Lists </h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;ol id="numbered-list-element"&gt; <br>
+            &lt;li&gt; Add any RAM Product to your cart &lt;/li&gt; <br>
+            &lt;li&gt; Add any NVMe Product to your cart &lt;/li&gt; <br>
+            &lt;li&gt; Get 10% your purchase! &lt;/li&gt; <br>
+          &lt;/ol&gt; <br>
+        </code>
+
+        <h4> Rendered element: </h4>
+        <ol id="numbered-list-element">
+          <li> Add any RAM Product to your cart </li>
+          <li> Add any NVMe Product to your cart </li>
+          <li> Get 10% your purchase! </li>
+        </ol>
+      </section>
+
+    </section>
+    <!-- // TEXT ELEMENTS SECTION -->
+
+
+
+    <!-- COMBINED ELEMENTS SECTION // -->
+    <section id="combined_elements">
+      <h2>Combined Elements</h2>
+
+      <section class="element">
+        <h3>Main Navigation</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;header class="nav-header"&gt; <br>
+            &lt;div class="logo"&gt; <br>
+              &lt;h1&gt; &lt;a href="index.html"&gt;Memory Restored.&lt;span class="type-blink"&gt;|&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt; <br>
+            &lt;/div&gt; <br>
+
+            &lt;nav class="desktop-nav"&gt; <br>
+              &lt;a href="#home" class="desktop-nav-item" id="desktop-home-link"&gt; Home &lt;/a&gt; <br>
+              
+                &lt;div class="dropdown"&gt; <br>
+                  &lt;a href="#" class="desktop-nav-item" id="desktop-products-link"&gt;Products&lt;/a&gt; <br>
+                    &lt;div class="dropdown-content-products"&gt; <br>
+                      &lt;a href="allram.html"&gt; DDR5 RAM &lt;/a&gt; <br>
+                      &lt;a href="allssd.html"&gt; NVMe SSD Storage&lt;/a&gt; <br>
+                      &lt;a href="allproducts.html" id="view-all-products"&gt; View All Products &lt;/a&gt; <br>
+                    &lt;/div&gt; <br>
+                &lt;/div&gt; <br>
+                &lt;a href="#about" class="desktop-nav-item" id="desktop-about-link"&gt; About &lt;/a&gt; <br>
+            &lt;/nav&gt;  <br>
+
+            &lt;div class="search-bar-group"&gt; <br>
+              &lt;input type="text" placeholder="Search for Products" id="search-bar"&gt; <br>
+              &lt;!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3 --&gt; <br>
+              &lt;button type="submit" class="material-symbols-outlined"&gt; search &lt;/button&gt; <br>
+            &lt;/div&gt;   <br>
+          &lt;/header&gt; <br>
+        </code>
+
+        <h4> Rendered element: </h4>
+
+
+
+        <header class="nav-header">
+          <div class="logo">
+            <h1> <a href="index.html">Memory Restored.<span class="type-blink">|</span></a></h1>
+          </div>
+
+          <nav class="desktop-nav">
+
+            <a href="#home" class="desktop-nav-item" id="desktop-home-link"> Home </a>
+
+            <div class="dropdown">
+              <a href="#" class="desktop-nav-item" id="desktop-products-link">Products</a>
+              <div class="dropdown-content-products">
+                <a href="allram.html"> DDR5 RAM </a>
+                <a href="allssd.html"> NVMe SSD Storage</a>
+                <a href="allproducts.html" id="view-all-products"> View All Products </a>
+              </div>
+            </div>
+            <a href="#about" class="desktop-nav-item" id="desktop-about-link"> About </a>
+          </nav>
+
+          <div class="search-bar-group">
+            <input type="text" placeholder="Search for Products" id="search-bar">
+            <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_searchbar3 -->
+            <button type="submit" class="material-symbols-outlined"> search </button>
+          </div>
+        </header>
+
+        <div class="announcement-bar">
+          <p> Free Shipping in North America! (But we only ship to Canada) </p>
+        </div>
+
+      </section>
+
+      <section class="element">
+        <h3>Product/Service Listing</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;div class="product-listing-group"&gt; <br>
+            &lt;h3 class="product-name"&gt; Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory &lt;/h3&gt; <br>
+            &lt;img class="product-image" id="corsair-ram" src="https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/192/19263/19263148.jpg" alt="Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory"&gt; <br>
+            &lt;p class="product-price"&gt; $129.99 &lt;span class="product-inflated-price"&gt; $597.99 &lt;/span&gt;&lt;/p&gt; <br>
+            &lt;div class="product-details-group"&gt;  <br>
+              &lt;h3 class="product-details-heading"&gt; Product Details &lt;/h3&gt; <br>
+              &lt;h4 class="product-description-heading"&gt; Product Description &lt;/h4&gt; <br>
+              &lt;p&gt; Unlock unparalleled performance with the Corsair Vengeance 32GB desktop memory. With a 6,400MHz speed and 288-pin configuration, <br>
+                  it delivers enhanced memory bandwidth, while the solid aluminum heatspreader efficiently dissipates heat for consistent performance. <br>
+                  The powerful CORSAIR iCUE software provides convenient control over the memory. <br>
+              &lt;/p&gt; <br>
+              &lt;h4 class="product-specifications-heading"&gt; Specifications &lt;/h4&gt; <br>
+              &lt;div class="product-specifications-group"&gt; <br>
+                &lt;dl&gt; <br>
+                  &lt;dt&gt;Memory Speed&lt;/dt&gt; &lt;dd&gt; 6400 MHz&lt;/dd&gt; <br>
+                  &lt;dt&gt;Memory Type&lt;/dt&gt; &lt;dd&gt; DDR5&lt;/dd&gt; <br>
+                  &lt;dt&gt;Memory Capacity&lt;/dt&gt; &lt;dd&gt; 32 GB&lt;/dd&gt; <br>
+                  &lt;dt&gt;Number of Modules&lt;/dt&gt; &lt;dd&gt; 2&lt;/dd&gt; <br>
+                  &lt;dt&gt;Capacity per Module&lt;/dt&gt; &lt;dd&gt; 16 GB&lt;/dd&gt; <br>
+                  &lt;dt&gt;Width&lt;/dt&gt; &lt;dd&gt; 13.1cm&lt;/dd&gt; <br>
+                  &lt;dt&gt;Height&lt;/dt&gt; &lt;dd&gt; 3.5cm&lt;/dd&gt; <br>
+                  &lt;dt&gt;Depth&lt;/dt&gt; &lt;dd&gt; 0.7cm&lt;/dd&gt; <br>
+                &lt;/dl&gt; <br>
+              &lt;/div&gt; <br>
+            &lt;/div&gt; <br>
+          &lt;/div&gt; <br>
+        </code>
+
+        <h4> Rendered element: </h4>
+        <div class="product-listing-group">
+          <img class="product-image" id="corsair-ram"
+            src="https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/192/19263/19263148.jpg"
+            alt="Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory">
+
+          <div class="product-details-group">
+            <h2 class="product-name"> Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory </h2>
+            <p class="product-price"> $129.99 <span class="product-inflated-price"> $597.99 </span></p>
+            <button type="submit" id="add-to-cart-button">Add to Cart</button>
+            <h3 class="product-details-heading"> Product Details </h3>
+            <h4 class="product-description-heading"> Product Description </h4>
+            <p> Unlock unparalleled performance with the Corsair Vengeance 32GB desktop memory. With a 6,400MHz speed
+              and 288-pin configuration,
+              it delivers enhanced memory bandwidth, while the solid aluminum heatspreader efficiently dissipates heat
+              for consistent performance.
+              The powerful CORSAIR iCUE software provides convenient control over the memory.
+            </p>
+            <h4 class="product-specifications-heading"> Specifications </h4>
+            <div class="product-specifications-group">
+              <dl>
+                <dt>Memory Speed</dt>
+                <dd> 6400 MHz</dd>
+                <dt>Memory Type</dt>
+                <dd> DDR5</dd>
+                <dt>Memory Capacity</dt>
+                <dd> 32 GB</dd>
+                <dt>Number of Modules</dt>
+                <dd> 2</dd>
+                <dt>Capacity per Module</dt>
+                <dd> 16 GB</dd>
+                <dt>Width</dt>
+                <dd> 13.1cm</dd>
+                <dt>Height</dt>
+                <dd> 3.5cm</dd>
+                <dt>Depth</dt>
+                <dd> 0.7cm</dd>
+              </dl>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="element">
+        <h3>Payment Form</h3>
+
+        <h4> Sample code: </h4>
+        <code>
+          &lt;form class="payment-form"&gt; <br>
+             &lt;div class="payment-method-group"&gt; <br>
+              &lt;input type="radio" name="payment-method" id="credit-card" value="credit-card" checked&gt; Credit Card <br>
+              &lt;input type="radio" name="payment-method" id="debit-card" value="debit-card"&gt; Debit Card <br>
+             &lt;/div&gt; <br>
+             &lt;br&gt; <br>
+              &lt;div class="payment-information-group"&gt; <br>
+                &lt;h3&gt; Payment Information &lt;/h3&gt; <br>
+                &lt;label id="payment-information-form"&gt; 
+                <br>
+                &lt;input type="text" name="card-number" placeholder="Card Number"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="card-expiration-date" placeholder="Expiration Date MM/YY"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="card-security-code" placeholder="Security Code"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="name-on-card" placeholder="Name on Card"&gt; 
+                <br>
+                &lt;/label&gt; <br>
+              &lt;/div&gt; <br>
+              &lt;div class="billing-address-group"&gt; <br>
+                &lt;h3&gt; Billing Address &lt;/h3&gt; <br>
+             &lt;label id="billing-form"&gt; 
+                <br>
+                &lt;input type="text" name="billing-full-name" placeholder="Full Name"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="billing-address" placeholder="Address"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="billing-city" placeholder="City"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="billing-province" placeholder="Province"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="text" name="billing-postal-code" placeholder="Postal Code"&gt; 
+                &lt;br&gt; <br>
+                &lt;input type="checkbox" name="same-as-shipping-checkbox" checked&gt; Shipping address same as billing address
+                <br>
+             &lt;/label&gt; <br>
+              &lt;/div&gt; <br>
+          &lt;/form&gt;
+        </code>
+
+
+        <h4> Rendered element: </h4>
+        <form class="payment-form">
+          <div class="payment-method-group">
+            <input type="radio" name="payment-method" value="credit-card" checked> Credit Card
+            <input type="radio" name="payment-method" value="debit-card"> Debit Card
+          </div>
+          <br>
+          <div class="payment-information-group">
+            <h3> Payment Information </h3>
+            <label id="payment-information-form">
+              <input type="text" name="card-number" placeholder="Card Number">
+              <br>
+              <input type="text" name="card-expiration-date" placeholder="Expiration Date MM/YY">
+              <br>
+              <input type="text" name="card-security-code" placeholder="Security Code">
+              <br>
+              <input type="text" name="name-on-card" placeholder="Name on Card">
+            </label>
+          </div>
+          <div class="billing-address-group">
+            <h3> Billing Address </h3>
+            <label id="billing-form">
+              <input type="text" name="billing-full-name" placeholder="Full Name">
+              <br>
+              <input type="text" name="billing-address" placeholder="Address">
+              <br>
+              <input type="text" name="billing-city" placeholder="City">
+              <br>
+              <input type="text" name="billing-province" placeholder="Province">
+              <br>
+              <input type="text" name="billing-postal-code" placeholder="Postal Code">
+              <br>
+              <input type="checkbox" name="same-as-shipping-checkbox" checked> Shipping address same as billing address
+            </label>
+          </div>
+        </form>
+      </section>
+
+      <section class="element">
+        <h3>Checkout Cart</h3>
+
+
+        <h4> Rendered element: </h4>
+        <div class="checkout-cart">
+
+          <div class="cart-section">
+            <h4 class="cart-row">
+              <span>CART SUMMARY</span>
+              <span>Qty: 1</span>
+            </h4>
+          </div>
+
+          <hr class="cart-divider">
+
+          <div class="cart-section">
+            <p class="cart-row">
+              <a href="#">Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory</a>
+              <span>$129.99</span>
+            </p>
+          </div>
+
+          <hr class="cart-divider">
+
+          <div class="cart-section">
+            <p class="cart-row">
+              <span>Subtotal:</span>
+              <span>$129.99</span>
+            </p>
+            <p class="cart-row">
+              <span>Shipping:</span>
+              <span>$5.00</span>
+            </p>
+            <p class="cart-row">
+              <span>Est. Tax:</span>
+              <span>$15.60</span>
+            </p>
+          </div>
+
+          <hr class="cart-divider">
+
+          <div class="cart-section">
+            <p class="cart-row" id="total-price">
+              <span>TOTAL:</span>
+              <span>$150.59</span>
+            </p>
+          </div>
+
+      </section>
+
+    </section>
+    <!-- // COMBINED ELEMENTS SECTION -->
+
+    <section id="branding">
+      <h2> Branding </h2>
+      <section class="element">
+        <h3> Brand Name: Memory Restored. </h3>
+        <h4> Intended Theme: Utilitarian, Neobrutalist </h4>
+
+      </section>
+
+      <section class="element">
+        <h3> Brand Questions </h3>
+        <h4> What does the company do, or offer? </h4>
+        <p> Sell RAM and NVMe SSDs at pre-inflation (or heavily
+          discounted) prices but in limited quantities and/or limited drops </p>
+        <h4> Who is the company to potential customers? (as a person) </h4>
+        <p> Electronics company selling limited stock of RAM and NVMe SSDs </p>
+        <h4> Why might this company entice someone to purchase a product or service? </h4>
+        <p> Being able to purchase these products at pre-inflation prices saves hundreds of dollars
+          at the tradeoff of being able to purchase them due to limited quantities and drops </p>
+      </section>
+
+      <section class="element">
+        <h3> Font Families </h3>
+
+        <p class="brand-font" id="logo-font"> Share Tech Mono - Logo </p>
+        <p> System terminal style</p>
+
+        <p class="brand-font" id="nav-secondary-font"> Geist Mono - Navigation & Accent Font </p>
+        <p> Monospaced fonts used in code, technical data sheets
+        </p>
+
+        <p class="brand-font" id="body-font"> Inter - Body </p>
+        <p> Clean and readable font
+        </p>
+
+
+      </section>
+
+      <section class="element">
+        <h3> Colour Palette </h3>
+
+        <p> Colour Palette influenced by raw RAM/SSD modules, mostly Extracted from image: </p>
+        <img id="colour-palette-image" src="img\vecteezy_ram-stick-ddr-ram-stick-computer-memory-module_67755298.png">
+
+        <p> PCB Green - #02733E - Accent Colour and Box Shadow </p>
+        <div class="colour-palette" id="pcbgreen-colour"></div>
+
+        <p> Off-White - #D0DCCC - Used for Navigation Text </p>
+        <div class="colour-palette" id="offwhite-colour"></div>
+
+        <p> Black - #0D0D0D - Used for Text, Border, and Box Shadow </p>
+        <div class="colour-palette" id="black-colour"></div>
+
+        <p> Aluminum Silver - #D8D8D8 - Accent Colour</p>
+        <div class="colour-palette" id="aluminumsilver-colour"></div>
+
+        <p> Contact Gold - #FFCD57 - Accent Colour </p>
+        <div class="colour-palette" id="contactgold-colour"></div>
+
+        <p> Very Light Gray - #EEEEEE - Background Colour </p>
+        <div class="colour-palette" id="verylightgray-colour"></div>
+
+      </section>
+
+      <section class="element design-attributes-section">
+        <h3> Design Attributes </h3>
+
+        <h4> Box Shadows </h4>
+        <p> Elements will have different coloured box shadows depending on function. </p>
+
+        <p> Example 1: Content Box Shadow (Green Shadow) </p>
+        <div class="box-shadow-example" id="box-shadow-example-1">
+          <div class="dropdown-content-products">
+            <a href="allram.html"> DDR5 RAM </a>
+            <a href="allssd.html"> NVMe SSD Storage</a>
+            <a href="allproducts.html" id="view-all-products"> View All Products </a>
+          </div>
+        </div>
+
+        <p> Example 2: Button Box Shadow (Black Shadow)</p>
+        <div class="box-shadow-example" id="box-shadow-example-2">
+          <button type="submit" id="add-to-cart-button">Add to Cart</button>
+        </div>
+
+
+        <h4> Link Interactions </h4>
+        <p> Links will use the Gold colour in hover and active states, representing the gold contacts
+          in RAM modules that connect directly into the motherboard for modules to be in an active state. </p>
+
+        <p> Example: Products Link</p>
+        <a href="#" id="products-link-example">Products</a>
+        <br>
+
+        <h4> Button Interactions </h4>
+        <p> Buttons will contain the box shadows, as well as a tactile-style feedback when hovered/clicked.
+          Buttons will also use Gold as its background colour for high contrast.
+        </p>
+
+        <p> Example: Add to Cart Button</p>
+        <button type="submit" id="add-to-cart-button">Add to Cart</button>
+
+      </section>
+
+
+    </section>
+
+
+
+    <section id="template-links">
+      <h2> Template Links </h2>
+
+      <ul>
+        <li><a href="product-listing-template.html"> Product Listing Template </a></li>
+        <li><a href="checkout-template.html"> Checkout Template </a></li>
+      </ul>
+    </section>
+
+    <section id="citations">
+      <h2>Citations</h2>
+
+      <ul>
+        <li>Matteson, Steve. Designer. 2011. <strong>Open Sans [Font]</strong>. Retrieved from <a
+            href="https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans">https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans</a>
+        </li>
+        <li>Creator. (Role). (Year). <strong>Title [Media]</strong>. Retrieved from <a href="#">URL</a>.</li>
+        <li>Apostrophe, Carrois. Designer. 2012. <strong> Share Tech Mono [Font] </strong>. Retrieved from <a
+            href="https://fonts.google.com/specimen/Share+Tech+Mono">https://fonts.google.com/specimen/Share+Tech+Mono</a>
+        </li>
+        <li>Briganti et al. Designers. 2023. <strong> Geist Mono [Font] </strong>. Retrieved from <a
+            href="https://fonts.google.com/specimen/Geist+Mono">https://fonts.google.com/specimen/Geist+Mono</a></li>
+        <li>Andersson, Rasmus. Designer. 2016. <strong> Inter [Font] </strong>. Retrieved from <a
+            href="https://fonts.google.com/specimen/Inter?categoryFilters=Feeling:%2FExpressive%2FCalm">https://fonts.google.com/specimen/Inter?categoryFilters=Feeling:%2FExpressive%2FCalm</a>
+        </li>
+        <li> W3 Schools. Website. <strong> How TO - Search Bar [Tutorial/Icons] </strong>. Retrieved from <a href="https://www.w3schools.com/howto/howto_css_searchbar.asp">https://www.w3schools.com/howto/howto_css_searchbar.asp</a>
+        </li>
+        <li> W3 Schools. Website. <strong>How TO - Checkbox [Tutorial] </strong>. Retrieved from <a href="https://www.w3schools.com/howto/howto_css_custom_checkbox.asp">https://www.w3schools.com/howto/howto_css_custom_checkbox.asp</a>
+        </li>
+        <li> Best Buy. Website. <strong> Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory (CMK32GX5M2B6400Z36) [Image/Resource]</strong>. Retrieved from <a href="https://www.bestbuy.ca/en-ca/product/corsair-vengeance-32gb-2-x-16gb-ddr5-6400mhz-desktop-memory-cmk32gx5m2b6400z36/19263148">https://www.bestbuy.ca/en-ca/product/corsair-vengeance-32gb-2-x-16gb-ddr5-6400mhz-desktop-memory-cmk32gx5m2b6400z36/19263148</a>
+        </li>
+        <li> Best Buy. Website. <strong> Samsung 990 Pro 1TB NVMe PCI-e Internal Solid State Drive [Image/Resource]</strong>. Retrieved from <a href="https://www.bestbuy.ca/en-ca/product/samsung-990-pro-1tb-nvme-pci-e-internal-solid-state-drive-mz-v9p1t0b-am-english/16624802">https://www.bestbuy.ca/en-ca/product/samsung-990-pro-1tb-nvme-pci-e-internal-solid-state-drive-mz-v9p1t0b-am-english/16624802</a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+
+</body>
+
+</html>
