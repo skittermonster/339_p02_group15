@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Memory Restored</title>
+  <link href="css/main.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body class="template-page">
+
+  <header class="nav-header">
+    <div class="logo">
+      <h1> <a href="index.html">Memory Restored.<span class="type-blink">|</span></a></h1>
+    </div>
+
+  </header>
+
+  <main class="page-container">
+
+    <h2 class="page-heading">CHECKOUT</h2>
+
+    <div class="checkout-group">
+
+      <section class="checkout-form-container">
+        <h3 class="checkout-section-title">CUSTOMER_DETAILS</h3>
+
+        <form class="payment-form">
+          <div class="payment-method-group">
+            <label><input type="radio" name="payment-method" value="credit-card" checked> Credit Card</label>
+            <label><input type="radio" name="payment-method" value="debit-card"> Debit Card</label>
+          </div>
+          <br>
+
+          <div class="payment-information-group">
+            <h3> Payment Information </h3>
+            <label>
+              <input type="text" name="card-number" placeholder="Card Number">
+              <input type="text" name="card-expiration-date" placeholder="Expiration Date MM/YY">
+              <input type="text" name="card-security-code" placeholder="Security Code">
+              <input type="text" name="name-on-card" placeholder="Name on Card">
+            </label>
+          </div>
+
+          <div class="billing-address-group">
+            <h3> Billing Address </h3>
+            <label>
+              <input type="text" name="billing-full-name" placeholder="Full Name">
+              <input type="text" name="billing-address" placeholder="Address">
+              <input type="text" name="billing-city" placeholder="City">
+              <input type="text" name="billing-province" placeholder="Province">
+              <input type="text" name="billing-postal-code" placeholder="Postal Code">
+              <br>
+              <input type="checkbox" name="same-as-shipping-checkbox" checked> Shipping address same as billing address
+            </label>
+          </div>
+
+          <button type="submit" id="confirm-order-button" class="checkout-full-width-btn">CONFIRM ORDER</button>
+        </form>
+      </section>
+
+
+      <div class="checkout-cart">
+
+        <div class="cart-section">
+          <h4 class="cart-row">
+            <span>CART SUMMARY</span>
+            <span>Qty: 1</span>
+          </h4>
+        </div>
+
+        <hr class="cart-divider">
+
+        <div class="cart-section">
+          <p class="cart-row">
+            <a href="#">Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory</a>
+            <span>$129.99</span>
+          </p>
+        </div>
+
+        <hr class="cart-divider">
+
+        <div class="cart-section">
+          <p class="cart-row">
+            <span>Subtotal:</span>
+            <span>$129.99</span>
+          </p>
+          <p class="cart-row">
+            <span>Shipping:</span>
+            <span>$5.00</span>
+          </p>
+          <p class="cart-row">
+            <span>Est. Tax:</span>
+            <span>$15.60</span>
+          </p>
+        </div>
+
+        <hr class="cart-divider">
+
+        <div class="cart-section">
+          <p class="cart-row" id="total-price">
+            <span>TOTAL:</span>
+            <span>$150.59</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
