@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JustOneMore — Terminal</title>
+  <style>
+  /* CSS variables in :root (reusable color palette + theme tokens).
+     Citation: https://www.w3schools.com/css/css3_variables.asp */
+  :root {
+    --soft-void: #121212;
+    --signal-green: #2ecc71;
+    --loop-orchid: #9b59b6;
+    --liability-red: #e74c3c;
+    --anomaly-gold: #f1c40f;
+    --screen-white: #ecf0f1;
+    --muted-border: #bdc3c7;
+    --body-bg: #0b0d10;
+    --text-main: var(--screen-white);
+    --card-bg: #0f1114;
+    --page-pad: 24px;
+  }
+
+  /* box-sizing: border-box makes width/height include padding + border (layout sanity).
+     Citation: https://www.w3schools.com/css/css3_box-sizing.asp */
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-main);
+    background: radial-gradient(circle at 20% 20%, rgba(46, 204, 113, 0.05), transparent 36%),
+                radial-gradient(circle at 80% 0%, rgba(155, 89, 182, 0.06), transparent 42%),
+                var(--body-bg);
+    line-height: 1.5;
+    padding: var(--page-pad);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* Header + global nav */
+  header {
+    background: var(--soft-void);
+    color: var(--screen-white);
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Arial Black', Impact, sans-serif;
+    margin: 0 0 8px 0;
+  }
+
+  /* Flexbox for aligning the logo + links in one row (space-between layout).
+     Citation: https://www.w3schools.com/css/css3_flexbox.asp */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0f1114;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(236, 240, 241, 0.14);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 16px;
+  }
+
+  .main-nav .logo {
+    color: var(--anomaly-gold);
+    font-family: 'Arial Black', Impact, sans-serif;
+  }
+
+  /* Hover + focus pseudo-classes for interactive states (mouse + keyboard).
+     Citation: https://www.w3schools.com/css/css_pseudo_classes.asp */
+  .nav-link {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(155, 89, 182, 0.12);
+    color: var(--loop-orchid);
+    font-weight: bold;
+    font-size: 0.95em;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    transition: 0.2s;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    border-color: var(--signal-green);
+    color: var(--signal-green);
+  }
+
+  /* Filters */
+  .filters-container {
+    background: #16181d;
+    color: var(--screen-white);
+    border: 1px solid rgba(236, 240, 241, 0.14);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  }
+
+  /* CSS Grid for responsive columns using repeat() and minmax().
+     Citation: https://www.w3schools.com/css/css_grid.asp */
+  .filters-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .filters-grid label {
+    font-weight: bold;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--anomaly-gold);
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(236, 240, 241, 0.18);
+    border-radius: 6px;
+    background: #0f1114;
+    color: var(--screen-white);
+    font-family: inherit;
+  }
+
+  select:focus {
+    outline: 2px solid var(--loop-orchid);
+    border-color: var(--loop-orchid);
+  }
+
+  /* Main Layout Split */
+  .catalog-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px; 
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* The Grid of Bets */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .bet-card {
+    background: var(--card-bg);
+    color: var(--screen-white);
+    border: 1px solid rgba(236, 240, 241, 0.14);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  }
+
+  .bet-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--loop-orchid);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.28);
+  }
+
+  .bet-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+
+    /* aspect-ratio + object-fit keep images consistently sized without distortion.
+       Citation: https://www.w3schools.com/css/css3_object-fit.asp */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border: 1px solid rgba(46, 204, 113, 0.35);
+  }
+
+  .bet-title {
+    font-family: 'Arial Black', Impact, sans-serif;
+    color: var(--loop-orchid);
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    min-height: 2.4em; 
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(241, 196, 15, 0.15);
+    color: var(--anomaly-gold);
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .bet-odds {
+    color: var(--signal-green);
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  .bet-card p {
+    font-size: 0.85em;
+    color: #bdc3c7;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* Pushes button group to bottom */
+  }
+
+  .card-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Arial Black', Impact, sans-serif;
+    text-align: center;
+    font-size: 0.9em;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Linear gradient backgrounds (blended button color).
+     Citation: https://www.w3schools.com/css/css3_gradients.asp */
+  .btn-primary {
+    background: linear-gradient(90deg, var(--loop-orchid), var(--signal-green));
+    color: #0b0b0b;
+    box-shadow: 0 8px 18px rgba(155, 89, 182, 0.35);
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    box-shadow: 0 10px 22px rgba(46, 204, 113, 0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    color: var(--screen-white);
+  }
+
+  .btn-reset {
+    background: transparent;
+    border: 1px solid var(--liability-red);
+    color: var(--liability-red);
+  }
+
+  .btn-reset:hover,
+  .btn-reset:focus {
+    background: rgba(231, 76, 60, 0.1);
+  }
+
+  /* Sidebar Stack */
+  .sidebar-stack {
+    /* position: sticky keeps the sidebar visible while scrolling (until its container ends).
+       Citation: https://www.w3schools.com/css/css_positioning.asp */
+    position: sticky;
+    top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sidebar-panel {
+    background: #16181d;
+    color: var(--screen-white);
+    border: 1px solid rgba(236, 240, 241, 0.14);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+
+  .panel-header {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 0.9em;
+    color: var(--loop-orchid);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  /* Active Slip Items */
+  .slip-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+
+  .slip-total {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(236, 240, 241, 0.2);
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .slip-total span:last-child {
+    color: var(--signal-green);
+  }
+
+  /* Palette List */
+  .swatch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .swatch-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8em;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Media queries change styles based on screen width (responsive design).
+     Citation: https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+  @media (max-width: 1200px) {
+    .catalog-layout {
+      grid-template-columns: 1fr;
+    }
+    .sidebar-stack {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    :root { --page-pad: 16px; }
+    .main-nav { flex-direction: column; gap: 12px; }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>JustOneMore // Products</h1>
+    <p>Predictive markets for the high-frequency observer. Assemble your slip below.</p>
+    <nav class="main-nav">
+      <div class="logo">JUSTONEMORE // LIVE</div>
+      <div style="display:flex; gap:10px;">
+        <a class="nav-link" href="./products.html">Products</a>
+        <a class="nav-link" href="./checkout.html">Checkout</a>
+        <a class="nav-link" href="./style%20guide.html">Style Guide</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="filters-container">
+    <h2>Market Filters</h2>
+    <div class="filters-grid">
+      <div>
+        <label>Category</label>
+        <select>
+          <option>All Live Events</option>
+          <option>Baseball</option>
+          <option>Basketball</option>
+          <option>Esports</option>
+          <option>Tennis</option>
+        </select>
+      </div>
+      <div>
+        <label>Risk Level</label>
+        <select>
+          <option>All Volatility</option>
+          <option>Low Risk (1.2x - 1.8x)</option>
+          <option>Medium (1.9x - 3.0x)</option>
+          <option>High/Degen (3.1x+)</option>
+        </select>
+      </div>
+      <div>
+        <label>Update Speed</label>
+        <select>
+          <option>Instant (15s)</option>
+          <option>Standard (60s)</option>
+          <option>Long Form (Session)</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <div class="catalog-layout">
+    <main class="catalog-grid">
+      
+      <article class="bet-card">
+        <img src="img1.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Baseball</span>
+          <span class="bet-odds">2.8x</span>
+        </div>
+        <div class="bet-title">Umpire adjusts mask</div>
+        <p>Does the home plate umpire adjust their gear before the 0-2 pitch? Must be a visible strap or cage adjustment.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img2.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Soccer</span>
+          <span class="bet-odds">2.2x</span>
+        </div>
+        <div class="bet-title">Next touch is a header</div>
+        <p>Predict whether the next ball contact is a header. Resolution in under 45 seconds.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img1.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Basketball</span>
+          <span class="bet-odds">3.5x</span>
+        </div>
+        <div class="bet-title">Corner Three Attempt</div>
+        <p>The very next field goal attempt will be from either the left or right corner arc. Resolves on shot release.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img2.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Esports</span>
+          <span class="bet-odds">4.8x</span>
+        </div>
+        <div class="bet-title">Clutch 1v2 conversion</div>
+        <p>High stakes: Current round concludes with a 1v2 (or worse) clutch victory for the CT side.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img1.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Tennis</span>
+          <span class="bet-odds">2.9x</span>
+        </div>
+        <div class="bet-title">Serve > 125mph</div>
+        <p>Resolves instantly on the speed gun reading of the next valid serve in play.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img2.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Baseball</span>
+          <span class="bet-odds">5.1x</span>
+        </div>
+        <div class="bet-title">Broken Bat on Contact</div>
+        <p>Next ball put in play results in a visibly broken or splintered bat. Extreme volatility.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img1.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Hockey</span>
+          <span class="bet-odds">1.9x</span>
+        </div>
+        <div class="bet-title">Puck out of play</div>
+        <p>Predict if the whistle blows for a puck leaving the rink within the next 2 minutes of game time.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img2.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Basketball</span>
+          <span class="bet-odds">2.1x</span>
+        </div>
+        <div class="bet-title">Coach removes jacket</div>
+        <p>Visual micro-bet: Will the head coach remove their suit jacket before the end of the half?</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+      <article class="bet-card">
+        <img src="img1.png" alt="bet">
+        <div class="meta-row">
+          <span class="badge">Live · Football</span>
+          <span class="bet-odds">3.0x</span>
+        </div>
+        <div class="bet-title">Timeout before snap</div>
+        <p>Will either team call a timeout before the next offensive snap? Resolves as soon as the play clock stops for timeout.</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Bet $5</button>
+          <button class="btn btn-outline">Details</button>
+        </div>
+      </article>
+
+    </main>
+
+    <aside class="sidebar-stack">
+      <div class="sidebar-panel">
+        <div class="panel-header">
+          <span>ACTIVE SLIP</span>
+          <span style="color: var(--anomaly-gold);">2 ITEMS</span>
+        </div>
+        <div class="slip-item">
+          <span>Umpire Mask Adjust</span>
+          <span>$5.00</span>
+        </div>
+        <div class="slip-item">
+          <span>Header Prediction</span>
+          <span>$3.00</span>
+        </div>
+        <div class="slip-total">
+          <span>Total Risk</span>
+          <span>$8.00</span>
+        </div>
+        <div style="margin-top: 20px; display: grid; gap: 8px;">
+          <button class="btn btn-primary" style="width:100%">Confirm All Bets</button>
+          <button class="btn btn-reset" style="width:100%">Flush Slip</button>
+        </div>
+      </div>
+
+      <div class="sidebar-panel">
+        <div class="panel-header">PALETTE IN PLAY</div>
+        <div class="swatch-list">
+          <div class="swatch-item">
+            <div class="dot" style="background: var(--signal-green);"></div>
+            <span><strong>Signal Green</strong> — Win States</span>
+          </div>
+          <div class="swatch-item">
+            <div class="dot" style="background: var(--loop-orchid);"></div>
+            <span><strong>Loop Orchid</strong> — Premium Events</span>
+          </div>
+          <div class="swatch-item">
+            <div class="dot" style="background: var(--liability-red);"></div>
+            <span><strong>Liability Red</strong> — Active Risk</span>
+          </div>
+          <div class="swatch-item">
+            <div class="dot" style="background: var(--anomaly-gold);"></div>
+            <span><strong>Anomaly Gold</strong> — Rare Market</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-panel" style="border-left: 4px solid var(--signal-green);">
+        <div class="panel-header">LIVE EDGE</div>
+        <div style="font-size: 1.6em; font-family: 'Arial Black'; margin-bottom: 4px; color: var(--signal-green);">4.2%</div>
+        <p style="margin:0; font-size: 0.8em; opacity: 0.7;">Current House advantage across all micro-markets. "That one doesn't count" token refresh in <strong>12:04</strong>.</p>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Style Guides</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --text: #e6edf3;
+      --accent: #58a6ff;
+      --border: #2d333b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(88,166,255,0.12), transparent 30%),
+                  radial-gradient(circle at 80% 0%, rgba(46,160,67,0.18), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto 64px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    p.lead {
+      margin: 0 0 24px;
+      color: #9fb1c5;
+    }
+
+    section.guide {
+      margin-top: 28px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 18px 8px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+
+    section.guide h2 {
+      margin: 0 0 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(88,166,255,0.12);
+      color: var(--accent);
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+    }
+
+    iframe {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    /* Provides a fallback height before JS resizes the frame.
+       Citation: https://www.w3schools.com/css/css_iframe.asp */
+    iframe.pending-size { min-height: 1200px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Combined Style Guides</h1>
+    <p class="lead">Scroll to view each section. Every guide lives in its own iframe so Ethan and Nathan keep their original styling with no CSS clashes.</p>
+
+    <section class="guide" aria-labelledby="ethan-title">
+      <h2 id="ethan-title">Ethan's Style Guide <span class="chip">original</span></h2>
+
+      <!-- HTML iframe element usage and attributes.
+           Citation: https://www.w3schools.com/html/html_iframe.asp -->
+      <iframe
+        class="pending-size"
+        src="Ethan/style%20guide.html"
+        title="Ethan style guide"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        onload="resizeFrame(this)"></iframe>
+    </section>
+
+    <section class="guide" aria-labelledby="nathan-title">
+      <h2 id="nathan-title">Nathan's Style Guide <span class="chip">original</span></h2>
+
+      <!-- iframe tag reference and attribute list.
+           Citation: https://www.w3schools.com/tags/tag_iframe.asp -->
+      <iframe
+        class="pending-size"
+        src="Nathan/index.html"
+        title="Nathan style guide"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        onload="resizeFrame(this)"></iframe>
+    </section>
+    
+  </main>
+
+  <script>
+    function resizeFrame(frame) {
+      try {
+        const doc = frame.contentWindow.document;
+
+        /* Element scrollHeight / offsetHeight properties for measuring content size.
+           Citation: https://www.w3schools.com/jsref/prop_element_scrollheight.asp */
+        const height = Math.max(
+          doc.body.scrollHeight,
+          doc.documentElement.scrollHeight,
+          doc.body.offsetHeight,
+          doc.documentElement.offsetHeight
+        );
+
+        frame.style.height = height + 32 + 'px'; // add a bit of padding space
+        frame.classList.remove('pending-size');
+      } catch (err) {
+        /* JavaScript try/catch error handling for runtime exceptions.
+           Citation: https://www.w3schools.com/js/js_errors.asp */
+        console.warn('Could not auto-resize iframe', err);
+      }
+    }
+  </script>
+</body>
+</html>
