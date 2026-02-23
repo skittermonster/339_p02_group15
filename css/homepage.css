@@ -1,0 +1,56 @@
+/* HOME BODY STYLING START */
+
+.home-body-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-header-group {
+  /* margin: 2rem 0; */
+  /* background-color: #BF6B04;  */
+  /* padding: 1rem 1rem; */
+  position: relative;
+}
+/* https://www.w3schools.com/howto/howto_css_image_text.asp */
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+#homepage-header-image {
+  width: 100vw;
+  background-color: rgba(255, 0, 0, 0.5); 
+  mix-blend-mode: multiply; /* Blends the color with the image pixels */
+}
+
+.promo-section {
+  width: min(46rem, calc(100vw - 3rem));
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #0d0d0d;
+  box-shadow: 6px 6px 0 #02733e;
+  background-color: #ffffff;
+}
+
+.promo-section h3 {
+  margin: 0 0 0.75rem;
+  font-family: "Geist Mono", monospace;
+  color: #0d0d0d;
+}
+
+.promo-section ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+ 
+
+/* HOME  BODY STYLING END */
+
+
+
