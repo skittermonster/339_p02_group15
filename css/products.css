@@ -85,6 +85,45 @@
   margin-left: 10rem;
 }
 
+/* For Individual Product Listing */
+.product-specifications-group {
+  font-family: "Geist Mono", monospace;
+}
+
+/* Description List Learned from IAT 235 */
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+dt {
+  grid-column-start: 1;
+  font-weight: bold;
+}
+
+dd {
+  grid-column-start: 2;
+}
+
+.product-specifications-group dl {
+  border: 2px solid #0D0D0D;
+}
+
+.product-specifications-group dt,
+.product-specifications-group dd {
+  padding: 0.5rem;
+  border-bottom: 2px solid #0D0D0D;
+}
+
+.product-specifications-group dt {
+  background-color: #D8D8D8;
+  border-right: 2px solid #0D0D0D;
+}
+
+.product-specifications-group dd {
+  margin-left: 0;
+}
+
 
 
 @media (width < 55rem) {
