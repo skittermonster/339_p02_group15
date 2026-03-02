@@ -1,0 +1,88 @@
+/* ||| ABOUT PAGE CONTENT STYLING ||| */
+
+.about-section-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 5rem;
+  max-width: 60rem;
+}
+
+
+
+.tech-container {
+  border: 2px solid #0D0D0D;
+  padding: 1.5rem;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 6px 6px 0px #02733E;
+}
+
+.tech-label {
+  position: absolute;
+  top: -0.7rem;
+  left: 1rem;
+  background-color: #ffffff;
+  border: 2px solid #0D0D0D;
+  padding: 0 0.5rem;
+  font-family: "Geist Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.terminal-container {
+  background-color: #0D0D0D;
+  border: 2px solid #0D0D0D;
+  padding: 1.5rem;
+  color: #D0DCCC; 
+  box-shadow: 6px 6px 0px #02733E;
+}
+
+.terminal-container .about-subheading,
+.terminal-container .about-text,
+.terminal-container .about-list {
+  color: #D0DCCC; 
+}
+
+.about-subheading {
+  font-family: "Geist Mono", monospace;
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.about-text {
+  font-family: "Inter", sans-serif;
+}
+
+.about-list {
+  font-family: "Geist Mono", monospace;
+  margin-bottom: 0;
+}
+
+.about-list li {
+  list-style-type: none;
+}
+
+.alert-container {
+  background-color: #FFCD57; 
+  border: 2px solid #0D0D0D;
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0px #02733E;
+}
+/* ||| ABOUT STYLING END ||| */
+
+
+@media (width < 55rem) {
+
+  .about-section-layout {
+    gap: 2rem; 
+  }
+
+
+  .tech-container,
+  .terminal-container,
+  .alert-container {
+    padding: 1rem;
+  }
+
+}
