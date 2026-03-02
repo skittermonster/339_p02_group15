@@ -128,14 +128,21 @@ dd {
 
 @media (width < 55rem) {
 
+  .product-listing-group,
   .product-feed-layout .product-listing-group {
     flex-direction: column;
     align-items: center;
   }
 
+  .product-details-group,
   .product-feed-layout .product-details-group {
     margin-left: 0;
     margin-top: 1rem;
+    max-width: 100%; 
+  }
+
+  .product-image {
+    max-width: 100%;
   }
 
 }
