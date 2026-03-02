@@ -6,17 +6,15 @@ body {
 }
 
 .nav-header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    /* background-color: #02733E; */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     background-color: #0D0D0D;
-    justify-content: space-between;
     border-bottom: #02733E 8px solid;
 }
 
 
 .logo {
+    justify-self: start;
     font-family: "Share Tech Mono", monospace;
     /* font-size: 1rem; */
     background: #0D0D0D;
@@ -83,7 +81,6 @@ body {
 
 .dropdown {
     position: relative;
-    /* overflow: hidden; */
     float: left;
 }
 
@@ -105,7 +102,6 @@ body {
     color: black;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    /* box-shadow:  */
     transition-property: background-color;
     transition-duration: 0.4s;
 }
@@ -119,7 +115,9 @@ body {
 }
 
 .search-bar-group {
-    margin: 1rem 3rem;
+    justify-self: end;
+    margin-top: 2rem;
+    margin-right: 3rem;
     display: flex;
     align-items: center;
 }
@@ -147,6 +145,17 @@ body {
 .search-bar-group button:hover {
     background-color: #FFCD57;
     color: #0D0D0D;
+}
+
+#shopping-cart {
+    color: #d0dccc;
+    transition-property: color;
+    transition-duration: 0.3s;
+    padding-left: 2rem;
+}
+
+#shopping-cart:hover {
+    color: #FFCD57;
 }
 
 .announcement-bar {
@@ -229,11 +238,16 @@ footer {
 @media (width < 55rem) {
 
     .nav-header {
+        display: flex; /* Reverts back to flexbox for mobile */
         flex-direction: column;
         align-items: center;
         gap: 1rem;
         padding-bottom: 1rem;
+    }
 
+    .search-bar-group { 
+        margin-top: 0;
+        margin-right: 0;
     }
 
     .page-container {
