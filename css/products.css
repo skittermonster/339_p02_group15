@@ -23,6 +23,23 @@
   color: inherit;
 }
 
+.product-feed-layout a .product-image {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-feed-layout a:hover .product-image {
+  transform: translate(-4px, -4px);
+  box-shadow: 6px 6px 0px ;  
+}
+
+.product-feed-layout a .product-name {
+  transition: color 0.3s;
+}
+
+.product-feed-layout a:hover .product-name {
+  color: #02733E; 
+}
+
 .product-feed-layout .product-image {
   max-width: 20rem;
 }
@@ -57,9 +74,11 @@
   margin-left: 1rem;
 }
 
+
 #add-to-cart-button {
-  max-width: 8rem;
+  max-width: 7rem;
   font-family: "Geist Mono", monospace;
+  font-size: 0.85rem;
   background-color: #FFCD57;
   color: #0D0D0D;
   border: 1px solid #0D0D0D;
@@ -69,6 +88,9 @@
   margin-bottom: 1rem;
   transition-property: background-color, color, box-shadow, transform;
   transition-duration: 0.3s;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
 }
 
 #add-to-cart-button:hover {
