@@ -109,7 +109,7 @@
   min-height: 150px; 
 }
 
-.contact-form input:focus,
+.contact-form input:not([type="radio"]):focus,
 .contact-form textarea:focus {
   outline: none;
   background-color: #FFFFFF;
