@@ -197,6 +197,42 @@ main {
   padding-left: 1.3rem;
 }
 
+/* ||| TERMINAL CONTAINER COMPONENT ||| */
+.terminal-container {
+  background-color: #0D0D0D;
+  border: 2px solid #0D0D0D;
+  padding: 1.5rem;
+  color: #D0DCCC;
+  box-shadow: 6px 6px 0px #02733E;
+}
+
+.terminal-container .about-subheading,
+.terminal-container .about-text,
+.terminal-container .about-list {
+  color: #D0DCCC;
+}
+
+.about-subheading {
+  font-family: "Geist Mono", monospace;
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.about-list {
+  font-family: "Geist Mono", monospace;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.about-list li {
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+}
+
+.homepage-promo {
+  margin-top: 1.5rem;
+}
+
 .section-header p {
   margin-top: 0;
 }
@@ -286,7 +322,8 @@ main {
   main {
     padding: 1.25rem 1rem 3rem;
   }
-/*
+
+  /*
   .desktop-nav {
     font-size: 0.9rem;
   }
