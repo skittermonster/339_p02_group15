@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Style Guide - Memory Restored.</title>
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+
+    <main class="sg-container">
+
+        <header class="sg-header">
+            <h2 class="page-heading">SYSTEM_STYLE_GUIDE</h2>
+            <p class="about-text">The universal component library and design language for Memory Restored.</p>
+        </header>
+
+        <section class="sg-section">
+            <h3 class="about-subheading">01. BRAND_COLORS</h3>
+            <div class="sg-color-grid">
+                <div class="sg-color-swatch bg-black">#0D0D0D</div>
+                <div class="sg-color-swatch bg-green">#02733E</div>
+                <div class="sg-color-swatch bg-gold">#FFCD57</div>
+                <div class="sg-color-swatch bg-white">#FFFFFF</div>
+                <div class="sg-color-swatch bg-grey">#D8D8D8</div>
+                <div class="sg-color-swatch bg-bg">#EEEEEE</div>
+            </div>
+        </section>
+
+        <section class="sg-section">
+            <h3 class="about-subheading">02. NAVIGATION & FOOTER</h3>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;header class="nav-header"&gt; ... &lt;/header&gt;</code>
+                <div class="sg-render-box">
+                    <header class="nav-header">
+                        <div class="logo">
+                            <h1><a href="#">Memory Restored.<span class="type-blink">|</span></a></h1>
+                        </div>
+                        <nav class="desktop-nav">
+                            <a href="#" class="desktop-nav-item">Home</a>
+                            <div class="dropdown">
+                                <a href="#" class="desktop-nav-item">Products</a>
+                                <div class="dropdown-content-products">
+                                    <a href="#">DDR5 RAM</a>
+                                    <a href="#">NVMe SSD Storage</a>
+                                    <a href="#">View All Products</a>
+                                </div>
+                            </div>
+                            <a href="#" class="desktop-nav-item">About</a>
+                            <a href="#" class="desktop-nav-item"> Contact </a>
+                        </nav>
+                        <div class="search-bar-group">
+                            <input type="text" placeholder="Search for Products" id="search-bar">
+                            <button type="button" class="material-symbols-outlined">search</button>
+                            <a href="#" id="shopping-cart"><span
+                                    class="material-symbols-outlined">shopping_bag</span></a>
+                        </div>
+                    </header>
+                    <div class="announcement-bar">
+                        <p>Free Shipping in North America! (But we only ship to Canada)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;footer&gt; ... &lt;/footer&gt;</code>
+                <div class="sg-render-box">
+                    <footer>
+                        <div class="footer-content">
+                            <div class="logo">
+                                <h2><a href="#">Memory Restored.<span class="type-blink">|</span></a></h2>
+                            </div>
+                            <nav class="footer-links">
+                                <a href="#" class="footer-link">Style Guide</a>
+                                <a href="#" class="footer-link">Citations</a>
+                                <a href="#" class="footer-link">Git Repository</a>
+                            </nav>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2026 Memory Restored. All rights reserved. Unauthorized bot scraping strictly
+                                prohibited.</p>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+        <section class="sg-section">
+            <h3 class="about-subheading">03. CONTAINERS & BLOCKS</h3>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;div class="tech-container"&gt; ... &lt;/div&gt;</code>
+                <div class="sg-render-box">
+                    <div class="tech-container">
+                        <span class="tech-label">THE_CATCH</span>
+                        <p class="about-text">Standard content container with PCB Green shadow. Used for general
+                            information and forms. Container header such as THE_REALITY_CHECK only used in About
+                            to describe content as needed. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;div class="terminal-container"&gt; ... &lt;/div&gt;</code>
+                <div class="sg-render-box">
+                    <div class="terminal-container">
+                        <h3 class="about-subheading">THE_PROTOCOL</h3>
+                        <p class="about-text">Inverted dark-mode container used for technical processes.</p>
+                        <ul class="about-list">
+                            <li>01. THE HARVEST: Scavenge dead corporate workstations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;div class="alert-container"&gt; ... &lt;/div&gt;</code>
+                <div class="sg-render-box">
+                    <div class="alert-container">
+                        <h3 class="about-subheading">THE_FIREWALL: Scalpers Not Welcome</h3>
+                        <p class="about-text">High-contrast hazard container used exclusively for scalper warnings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sg-section">
+            <h3 class="about-subheading">04. FORMS & BUTTONS</h3>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">Interactive Form &amp; Buttons</code>
+                <div class="sg-render-box">
+                    <form class="contact-form">
+                        <div class="input-group">
+                            <label for="sg-name">Name</label>
+                            <input type="text" id="sg-name" placeholder="John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label for="sg-log">Transmission Log</label>
+                            <textarea id="sg-log" placeholder="Input details here..."></textarea>
+                        </div>
+                        <button type="button" class="contact-submit-button">SUBMIT</button>
+                        <br>
+                        <a href="#" id="add-to-cart-button">Add to Cart</a>
+                    </form>
+                    <div class="sg-element-wrapper">
+                        <code class="sg-code-block">Terminal Radio Buttons (.radio-category-group)</code>
+                        <div class="sg-render-box">
+                            <div class="radio-category-group">
+                                <label><input type="radio" name="sg-radio" value="support" checked> [SUPPORT] </label>
+                                <label><input type="radio" name="sg-radio" value="feedback"> [FEEDBACK] </label>
+                                <label><input type="radio" name="sg-radio" value="other"> [OTHER] </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sg-section">
+            <h3 class="about-subheading">05. PRODUCT COMPONENTS</h3>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;div class="product-listing-group"&gt; ... &lt;/div&gt;</code>
+                <div class="sg-render-box">
+                    <div class="product-listing-group">
+                        <div class="mock-product-image">
+                            <span>IMAGE_PLACEHOLDER</span>
+                        </div>
+                        <div class="product-details-group">
+                            <h2 class="product-name">Corsair Vengeance 32GB DDR5 6400MHz</h2>
+                            <p class="product-price">$129.99 <span class="product-inflated-price">$597.99</span></p>
+                            <a href="#" id="add-to-cart-button">Add to Cart</a>
+                            <p class="about-text">Unlock unparalleled performance with the Corsair Vengeance 32GB
+                                desktop memory.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sg-element-wrapper">
+                <code
+                    class="sg-code-block">&lt;div class="product-specifications-group"&gt; &lt;dl&gt; ... &lt;/dl&gt; &lt;/div&gt;</code>
+                <div class="sg-render-box">
+                    <div class="product-specifications-group">
+                        <dl>
+                            <dt>Memory Speed</dt>
+                            <dd>6400 MHz</dd>
+                            <dt>Memory Type</dt>
+                            <dd>DDR5</dd>
+                            <dt>Memory Capacity</dt>
+                            <dd>32 GB</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sg-section">
+            <h3 class="about-subheading">06. CHECKOUT COMPONENTS</h3>
+
+            <div class="sg-element-wrapper">
+                <code class="sg-code-block">&lt;div class="checkout-cart"&gt; ... &lt;/div&gt;</code>
+                <div class="sg-render-box">
+                    <div class="checkout-cart">
+                        <div class="cart-section">
+                            <h4 class="cart-row">
+                                <span>CART SUMMARY</span>
+                                <span>Qty: 1</span>
+                            </h4>
+                        </div>
+                        <hr class="cart-divider">
+                        <div class="cart-section">
+                            <p class="cart-row">
+                                <a href="#">Corsair Vengeance 32GB (2 x 16GB) DDR5 6400MHz Desktop Memory</a>
+                                <span>$129.99</span>
+                            </p>
+                        </div>
+                        <hr class="cart-divider">
+                        <div class="cart-section">
+                            <p class="cart-row">
+                                <span>Subtotal:</span>
+                                <span>$129.99</span>
+                            </p>
+                            <p class="cart-row">
+                                <span>Shipping:</span>
+                                <span>$5.00</span>
+                            </p>
+                            <p class="cart-row">
+                                <span>Est. Tax:</span>
+                                <span>$15.60</span>
+                            </p>
+                        </div>
+                        <hr class="cart-divider">
+                        <div class="cart-section">
+                            <p class="cart-row" id="total-price">
+                                <span>TOTAL:</span>
+                                <span>$150.59</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
